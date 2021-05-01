@@ -1,0 +1,163 @@
+/* nejsme vcerejsi, pouzivame moderni box model */
+html { box-sizing: border-box; }
+*, ::after, ::before { box-sizing: inherit; }
+
+
+/* -------------------------------------------------- */
+
+/*
+pouzivame mobile first pristup
+tj. vychozi styly mimo media query jsou pro nejmensi mobilni zarizeni
+s pribyvajici sirkou pridavame media query pro
+středně široké obrazovky:
+@media (min-width: 480px) {
+}
+široké obrazovky
+@media (min-width: 860px) {
+}
+*/
+
+
+body {
+    margin: 0;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.paticka {
+    text-align: center;
+    font-size: 14px;
+    color: silver;
+}
+
+.paticka a {
+    color: silver;
+}
+
+
+/* ------------------------------- */
+/* ----- DOLE BUDE TVOJE CSS ----- */
+/* ------------------------------- */
+
+.recept {
+    display: flex;
+    flex-direction: column-reverse;
+    min-height: 90px;
+    justify-content: space-between;
+    padding: 0.5rem;
+    background-image:
+        linear-gradient(hsla(0 0% 0% / 0.3), hsla(0 0% 0% / 0.3)),
+        var(--bg-recept);
+    background-position: center, center;
+    background-size: cover, cover;
+    background-repeat: no-repeat;
+    border: 1px solid #fff;
+    color: #fff;
+    text-shadow: 0 0 4px hsla(0 0% 0% / 0.9);
+
+}
+
+.recept-hlavni {
+    --bg-recept: url('images/salat.jpg');
+    min-height: 200px;
+}
+
+.recept-chlebicek {
+    --bg-recept: url('images/chlebicek.jpg');
+}
+.recept-cizrna {
+    --bg-recept: url('images/cizrna.jpg');
+}
+.recept-tacos {
+    --bg-recept: url('images/tacos.jpg');
+}
+.recept-burger {
+    --bg-recept: url('images/burger.jpg');
+}
+
+.recept-nazev {
+    margin: 0;
+    font-family: "Raleway" sans-serif;
+    font-weight: 800;
+    font-size: 1.2rem;
+}
+
+.recept-meta {
+    display: flex;
+    justify-content: space-between;
+    font-family: "Source Sans Pro" sans-serif;
+    font-weight: 400;
+    font-size: 0.8rem;
+}
+
+.salat {
+    font-size: 1.75rem;
+}
+
+@media only screen and (min-width: 480px) {
+    .salat {
+        font-size: 2rem;
+    }
+    
+    .maly-nazev {
+        font-size: 1.5rem;
+    }
+    .recepty {
+        display: flex;
+        flex-direction: column;
+    }
+    .recept {
+        min-height: 150px;
+        padding: 1.25rem;
+    }
+    .recept-hlavni {
+        min-height: 250px;
+        flex-basis: 100%;
+    }
+    
+    .male-recepty {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .recept-chlebicek,
+    .recept-tacos,
+    .recept-burger,
+    .recept-cizrna {
+        flex-basis: 50%;
+    }
+
+    .recept-tacos {
+        order: 1;
+    }
+
+    .recept-cizrna {
+        order: 2;
+    }
+
+    .recept-burger {
+        order: 3;
+    }
+}
+
+@media only screen and (min-width: 860px) {
+    .salat {
+        font-size: 3rem;
+    }
+
+    .maly-nazev {
+        font-size: 1.75rem;
+    }
+
+    .recepty {
+        display: flex;
+        flex-direction: row;
+    }
+    .recept {
+        min-height: 200px;
+        padding: 1.25rem;
+    }
+    .recept-hlavni {
+        min-height: 400px;
+    }    
+}
+
